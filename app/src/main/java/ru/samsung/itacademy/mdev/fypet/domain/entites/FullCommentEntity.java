@@ -3,7 +3,7 @@ package ru.samsung.itacademy.mdev.fypet.domain.entites;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class fullCommentEntity {
+public class FullCommentEntity {
     @NonNull
     private final String id;
     @Nullable
@@ -13,21 +13,19 @@ public class fullCommentEntity {
     @NonNull
     private final String user_id;
 
-    public fullCommentEntity(@NonNull String id, @Nullable String content, @NonNull String formId, @NonNull String userId) {
+    public FullCommentEntity(@NonNull String id,
+                             @NonNull String form_id,
+                             @NonNull String user_id,
+                             @Nullable String content) {
         this.id = id;
+        this.form_id = form_id;
+        this.user_id = user_id;
         this.content = content;
-        form_id = formId;
-        user_id = userId;
     }
 
     @NonNull
     public String getId() {
         return id;
-    }
-
-    @Nullable
-    public String getContent() {
-        return content;
     }
 
     @NonNull
@@ -38,5 +36,10 @@ public class fullCommentEntity {
     @NonNull
     public String getUser_id() {
         return user_id;
+    }
+
+    @Nullable
+    public String getContent() {
+        return content;
     }
 }
