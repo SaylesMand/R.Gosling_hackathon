@@ -27,6 +27,7 @@ public class ProfileActivity extends AppCompatActivity {
         formList = new ArrayList<>();
         formList.add(new Form("Джесси", "2 года", "Той терьер", R.drawable.dog));
         formList.add(new Form("Джесси", "2 года", "Той терьер", R.drawable.dog));
+        formList.add(new Form("Джесси", "2 года", "Той терьер", R.drawable.dog));
 
         rvaForm = new RVAForm(formList);
         recyclerView.setAdapter(rvaForm);
