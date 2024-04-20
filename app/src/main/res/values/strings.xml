@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">FYPet</string>
+    <string name="phone">Телефон</string>
+    <string name="email">Email</string>
+    <string name="login">ЛОГИН</string>
+    <string name="password">Пароль</string>
+    <string name="sign_in">Войти</string>
+    <string name="reg">У вас еще нет аккаунта? Зарегистрируйтесь сейчас!</string>
+    <string name="registration">РЕГИСТРАЦИЯ</string>
+    <string name="repeat_the_password">Введите пароль еще раз</string>
+    <string name="first_name">Имя</string>
+    <string name="last_name">Фамилия</string>
+    <string name="name_dog">Кличка</string>
+    <string name="age_dog">Возраст</string>
+    <string name="breed_dog">Порода</string>
 </resources>

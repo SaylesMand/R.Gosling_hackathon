@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_schedule_card_drawable"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginBottom="5dp"
+    >
+
+    <ImageView
+        android:id="@+id/photoDog"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/dog" />
+
+    <TextView
+        android:id="@+id/nameDog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/photoDog"
+        android:layout_alignParentTop="true"
+        android:text="@string/name_dog"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/ageDog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/photoDog"
+        android:layout_below="@id/nameDog"
+        android:text="@string/age_dog"/>
+    <TextView
+        android:id="@+id/breedDog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/photoDog"
+        android:layout_below="@id/ageDog"
+        android:text="@string/breed_dog"/>
+
+</RelativeLayout>
