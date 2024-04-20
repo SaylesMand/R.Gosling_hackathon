@@ -41,7 +41,9 @@ dependencies {
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.gson)
 
+    implementation ("androidx.recyclerview:recyclerview:1.3.2")
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
 }
