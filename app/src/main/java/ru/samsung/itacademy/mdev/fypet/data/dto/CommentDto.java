@@ -5,26 +5,17 @@ import androidx.annotation.Nullable;
 
 import com.google.gson.annotations.SerializedName;
 
-public class FormDto {
+public class CommentDto {
     @NonNull
-    @SerializedName("ID")
+    @SerializedName("id")
     public String id;
     @Nullable
-    @SerializedName("address")
-    public String address;
+    @SerializedName("content")
+    public String content;
     @NonNull
-    @SerializedName("type")
-    public String type;
-    @NonNull
-    @SerializedName("breed")
-    public String breed;
-    @NonNull
-    @SerializedName("is_muted")
-    public boolean is_muted;
+    @SerializedName("form_id")
+    public String form_id;
     @NonNull
     @SerializedName("user_id")
     public String user_id;
-    @Nullable
-    @SerializedName("description")
-    public String description;
 }

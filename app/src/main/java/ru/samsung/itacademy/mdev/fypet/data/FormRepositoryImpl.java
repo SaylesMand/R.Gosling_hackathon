@@ -5,42 +5,42 @@ import androidx.annotation.NonNull;
 import java.util.function.Consumer;
 
 import ru.samsung.itacademy.mdev.fypet.data.network.RetrofitFactory;
-import ru.samsung.itacademy.mdev.fypet.data.source.UserApi;
-import ru.samsung.itacademy.mdev.fypet.domain.UserRepository;
-import ru.samsung.itacademy.mdev.fypet.domain.entites.FullUserEntity;
-import ru.samsung.itacademy.mdev.fypet.domain.entites.Status;
+import ru.samsung.itacademy.mdev.fypet.data.source.FormApi;
 import ru.samsung.itacademy.mdev.fypet.data.utils.CallToConsumer;
+import ru.samsung.itacademy.mdev.fypet.domain.FormRepository;
+import ru.samsung.itacademy.mdev.fypet.domain.entites.FullFormEntity;
+import ru.samsung.itacademy.mdev.fypet.domain.entites.Status;
 
 
-public class UserRepositoryImpl implements UserRepository {
-    private static UserRepositoryImpl INSTANCE;
-    private final UserApi userApi = RetrofitFactory.getInstance().getUserApi();
-    private UserRepositoryImpl() {}
+public class FormRepositoryImpl implements FormRepository {
+    private static FormRepositoryImpl INSTANCE;
+    private final FormApi FormApi = RetrofitFactory.getInstance().getFormApi();
+    private FormRepositoryImpl() {}
 
-    public static synchronized UserRepositoryImpl getInstance() {
+    public static synchronized FormRepositoryImpl getInstance() {
         if (INSTANCE == null) {
-            INSTANCE = new UserRepositoryImpl();
+            INSTANCE = new FormRepositoryImpl();
         }
         return INSTANCE;
     }
     @Override
-    public void getUser(@NonNull String id, @NonNull Consumer<Status<FullUserEntity>> callback) {
-        userApi.getById(id).enqueue(new CallToConsumer<>(
+    public void getForm(@NonNull String id, @NonNull Consumer<Status<FullFormEntity>> callback) {
+        FormApi.getById(id).enqueue(new CallToConsumer<>(
                 callback,
-                user -> {
-                    final String resultId = user.id;
-                    final String name = user.name;
-                    final String surname = user.surname;
-                    final String password = user.password;
-                    if (resultId != null && name != null && surname != null && password != null) {
-                        return new FullUserEntity(
+                form -> {
+                    final String resultId = form.id;
+                    final String name = form.type;
+                    final String breed = form.breed;
+                    final String user_id = form.user_id;
+                    if (resultId != null && name != null && breed != null && user_id != null) {
+                        return new FullFormEntity(
                                 resultId,
                                 name,
-                                surname,
-                                password,
-                                user.email,
-                                user.phone,
-                                user.address
+                                breed,
+                                user_id,
+                                form.address,
+                                form.description,
+                                form.is_muted
                         );
                     } else {
                         return null;

@@ -5,26 +5,26 @@ import androidx.annotation.Nullable;
 
 import com.google.gson.annotations.SerializedName;
 
-public class UserDto {
+public class FormDto {
     @NonNull
-    @SerializedName("id")
+    @SerializedName("ID")
     public String id;
-    @NonNull
-    @SerializedName("name")
-    public String name;
-    @NonNull
-    @SerializedName("surname")
-    public String surname;
-    @NonNull
-    @SerializedName("password")
-    public String password;
-    @Nullable
-    @SerializedName("email")
-    public String email;
-    @Nullable
-    @SerializedName("phone")
-    public String phone;
     @Nullable
     @SerializedName("address")
     public String address;
+    @NonNull
+    @SerializedName("type")
+    public String type;
+    @NonNull
+    @SerializedName("breed")
+    public String breed;
+    @NonNull
+    @SerializedName("is_muted")
+    public boolean is_muted;
+    @NonNull
+    @SerializedName("user_id")
+    public String user_id;
+    @Nullable
+    @SerializedName("description")
+    public String description;
 }

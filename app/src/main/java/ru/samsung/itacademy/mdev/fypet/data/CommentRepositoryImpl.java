@@ -5,42 +5,38 @@ import androidx.annotation.NonNull;
 import java.util.function.Consumer;
 
 import ru.samsung.itacademy.mdev.fypet.data.network.RetrofitFactory;
-import ru.samsung.itacademy.mdev.fypet.data.source.FormApi;
+import ru.samsung.itacademy.mdev.fypet.data.source.CommentApi;
 import ru.samsung.itacademy.mdev.fypet.data.utils.CallToConsumer;
-import ru.samsung.itacademy.mdev.fypet.domain.FormRepository;
-import ru.samsung.itacademy.mdev.fypet.domain.entites.FullFormEntity;
+import ru.samsung.itacademy.mdev.fypet.domain.CommentRepository;
+import ru.samsung.itacademy.mdev.fypet.domain.entites.FullCommentEntity;
 import ru.samsung.itacademy.mdev.fypet.domain.entites.Status;
 
 
-public class FormRepositoryImpl implements FormRepository {
-    private static FormRepositoryImpl INSTANCE;
-    private final FormApi FormApi = RetrofitFactory.getInstance().getFormApi();
-    private FormRepositoryImpl() {}
+public class CommentRepositoryImpl implements CommentRepository {
+    private static CommentRepositoryImpl INSTANCE;
+    private final CommentApi CommentApi = RetrofitFactory.getInstance().getCommentApi();
+    private CommentRepositoryImpl() {}
 
-    public static synchronized FormRepositoryImpl getInstance() {
+    public static synchronized CommentRepositoryImpl getInstance() {
         if (INSTANCE == null) {
-            INSTANCE = new FormRepositoryImpl();
+            INSTANCE = new CommentRepositoryImpl();
         }
         return INSTANCE;
     }
     @Override
-    public void getForm(@NonNull String id, @NonNull Consumer<Status<FullFormEntity>> callback) {
-        FormApi.getById(id).enqueue(new CallToConsumer<>(
+    public void getComment(@NonNull String id, @NonNull Consumer<Status<FullCommentEntity>> callback) {
+        CommentApi.getById(id).enqueue(new CallToConsumer<>(
                 callback,
-                form -> {
-                    final String resultId = form.id;
-                    final String name = form.type;
-                    final String breed = form.breed;
-                    final String user_id = form.user_id;
-                    if (resultId != null && name != null && breed != null && user_id != null) {
-                        return new FullFormEntity(
+                comment -> {
+                    final String resultId = comment.id;
+                    final String form_id = comment.form_id;
+                    final String user_id = comment.user_id;
+                    if (resultId != null && form_id != null && user_id != null) {
+                        return new FullCommentEntity(
                                 resultId,
-                                name,
-                                breed,
+                                form_id,
                                 user_id,
-                                form.address,
-                                form.description,
-                                form.is_muted
+                                comment.content
                         );
                     } else {
                         return null;
