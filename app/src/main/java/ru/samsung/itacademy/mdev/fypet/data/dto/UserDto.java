@@ -15,9 +15,9 @@ public class UserDto {
     @NonNull
     @SerializedName("surname")
     public String surname;
-    @NonNull
-    @SerializedName("password")
-    public String password;
+//    @NonNull
+//    @SerializedName("password")
+//    public String password;
     @Nullable
     @SerializedName("email")
     public String email;

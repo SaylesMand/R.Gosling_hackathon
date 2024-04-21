@@ -7,6 +7,6 @@ import ru.samsung.itacademy.mdev.fypet.data.dto.FormDto;
 
 
 public interface FormApi {
-    @GET("user/{id}")
+    @GET("form/{id}")
     Call<FormDto> getById(@Path("id") String id);
 }

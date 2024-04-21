@@ -6,6 +6,6 @@ import retrofit2.http.Path;
 import ru.samsung.itacademy.mdev.fypet.data.dto.CommentDto;
 
 public interface CommentApi {
-    @GET("user/{id}")
+    @GET("comment/{id}")
     Call<CommentDto> getById(@Path("id") String id);
 }
