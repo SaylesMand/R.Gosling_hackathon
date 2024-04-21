@@ -49,26 +49,13 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/userSecondName"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/custom_edittext"
-                android:drawablePadding="8dp"
-                android:hint="@string/last_name"
-                android:inputType="textCapWords"
-                android:padding="10dp"
-                android:textColor="@color/black"
-                android:textColorHighlight="@color/cardview_dark_background" />
-
-            <EditText
-                android:id="@+id/userFirstName"
+                android:id="@+id/userLogin"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/custom_edittext"
                 android:drawablePadding="8dp"
-                android:hint="@string/first_name"
+                android:hint="@string/login"
                 android:inputType="textCapWords"
                 android:padding="10dp"
                 android:textColor="@color/black"
@@ -89,7 +76,7 @@
                 android:textColorHighlight="@color/cardview_dark_background" />
 
             <EditText
-                android:id="@+id/userCode"
+                android:id="@+id/userPassword2"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="15dp"

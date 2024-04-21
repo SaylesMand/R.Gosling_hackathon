@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 import ru.samsung.itacademy.mdev.fypet.domain.entites.FullFormEntity;
 
-public class MainActivity extends AppCompatActivity {
+public class FormsActivity extends AppCompatActivity {
     ArrayList<FullFormEntity> formsPool;
     int currentFormIndex = 0;
 
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         btn_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, InfoActivity.class);
+                Intent intent = new Intent(FormsActivity.this, InfoActivity.class);
                 startActivity(intent);
             }
         });
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton btnMenu = customMenuView.findViewById(R.id.btnMenu);
 
         btnProfile.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+            Intent intent = new Intent(FormsActivity.this, ProfileActivity.class);
             startActivity(intent);
         });
 
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnInfo.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, InfoActivity.class);
+            Intent intent = new Intent(FormsActivity.this, InfoActivity.class);
             //intent.putExtra("formId", formsPool.get(currentFormIndex).getId());
             startActivity(intent);
         });
