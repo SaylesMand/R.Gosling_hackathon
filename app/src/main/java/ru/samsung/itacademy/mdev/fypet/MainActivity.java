@@ -30,37 +30,24 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         formsPool = new ArrayList<>();
+
+        ImageButton btn_info = findViewById(R.id.btn_info);
+        btn_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, InfoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_screen_toolbar, menu);
-        getMenuInflater().inflate(R.menu.info_main_toolbar, menu);
 
         MenuItem customMenuItem_2 = menu.findItem(R.id.action_custom2);
-        View customMenuView_2 = customMenuItem_2.getActionView();
-
-        ImageButton btnDislike = customMenuView_2.findViewById(R.id.btnDislike);
-        ImageButton btnInfo = customMenuView_2.findViewById(R.id.btnInfo);
-        ImageButton btnLike = customMenuView_2.findViewById(R.id.btnLike);
-
-        btnDislike.setOnClickListener(v -> {
-
-        });
-
-        btnInfo.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, InfoActivity.class);
-            //intent.putExtra("formId", formsPool.get(currentFormIndex).getId());
-            startActivity(intent);
-        });
-
-        btnLike.setOnClickListener(v -> {
-            // Handle right button click for customMenuItem_2
-        });
-
-        // action bar (dislike-info-like)
-        //ActionMenuView infoToolbar = (ActionMenuView) findViewById(R.id.infoToolbar);
-        //getMenuInflater().inflate(R.menu.info_main_toolbar, infoToolbar.getMenu());
 
         MenuItem customMenuItem = menu.findItem(R.id.action_custom);
         View customMenuView = customMenuItem.getActionView();
@@ -82,7 +69,24 @@ public class MainActivity extends AppCompatActivity {
             // Handle right button click
         });
 
+        // INFO "TOOLBAR" BUT IT IS NOT A TOOLBAR
+        ImageButton btnDislike = (ImageButton) findViewById(R.id.btnDislike);
+        ImageButton btnInfo = (ImageButton) findViewById(R.id.btnInfo);
+        ImageButton btnLike = (ImageButton) findViewById(R.id.btnLike);
 
+        btnDislike.setOnClickListener(v -> {
+
+        });
+
+        btnInfo.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, InfoActivity.class);
+            //intent.putExtra("formId", formsPool.get(currentFormIndex).getId());
+            startActivity(intent);
+        });
+
+        btnLike.setOnClickListener(v -> {
+            // Handle right button click for customMenuItem_2
+        });
 
         return true;
     }
