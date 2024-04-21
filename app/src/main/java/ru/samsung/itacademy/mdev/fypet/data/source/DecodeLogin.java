@@ -5,8 +5,6 @@ import android.util.Log;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 
-import okio.ByteString;
-
 public class DecodeLogin {
     public static String decodeLogin() {
         String authData = CredentialsDataSource.getInstance().getAuthData();

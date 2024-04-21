@@ -2,11 +2,11 @@ package ru.samsung.itacademy.mdev.fypet;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import androidx.appcompat.widget.ActionMenuView;
+
 import android.widget.ImageButton;
 import androidx.appcompat.widget.Toolbar;
 import androidx.activity.EdgeToEdge;
@@ -47,8 +47,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_screen_toolbar, menu);
 
-        MenuItem customMenuItem_2 = menu.findItem(R.id.action_custom2);
-
         MenuItem customMenuItem = menu.findItem(R.id.action_custom);
         View customMenuView = customMenuItem.getActionView();
 
@@ -70,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // INFO "TOOLBAR" BUT IT IS NOT A TOOLBAR
-        ImageButton btnDislike = (ImageButton) findViewById(R.id.btnDislike);
-        ImageButton btnInfo = (ImageButton) findViewById(R.id.btnInfo);
-        ImageButton btnLike = (ImageButton) findViewById(R.id.btnLike);
+        ImageButton btnDislike = (ImageButton) findViewById(R.id.btn_close);
+        ImageButton btnInfo = (ImageButton) findViewById(R.id.btn_info);
+        ImageButton btnLike = (ImageButton) findViewById(R.id.btn_like);
 
         btnDislike.setOnClickListener(v -> {
 

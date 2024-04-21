@@ -2,7 +2,6 @@ package ru.samsung.itacademy.mdev.fypet.domain;
 
 import androidx.annotation.NonNull;
 
-import java.util.List;
 import java.util.function.Consumer;
 
 import ru.samsung.itacademy.mdev.fypet.domain.entites.FullUserEntity;
