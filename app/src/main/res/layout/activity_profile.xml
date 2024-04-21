@@ -35,6 +35,7 @@
                 app:menu="@menu/toolbar_menu"
                 app:navigationIcon="@drawable/ic_back"
                 app:titleTextColor="@color/white"
+                android:layout_margin="14dp"
                 />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>

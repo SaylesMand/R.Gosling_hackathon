@@ -45,10 +45,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="26dp"
             android:text="Джесси, 2"
             android:textColor="@color/white"
-            android:textSize="34sp"
+            android:textSize="38sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent" />
 
