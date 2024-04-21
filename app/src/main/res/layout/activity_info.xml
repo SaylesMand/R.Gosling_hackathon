@@ -28,6 +28,7 @@
             android:scaleType="centerCrop"
             android:src="@drawable/dog"/>
         <ImageButton
+            android:id="@+id/returnButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_back"
@@ -82,7 +83,7 @@
 
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/commentButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/transparent"
@@ -95,7 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Введите сообщение..."
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintEnd_toStartOf="@+id/commentButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>

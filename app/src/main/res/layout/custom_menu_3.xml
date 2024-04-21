@@ -4,32 +4,32 @@
     android:layout_height="match_parent">
 
     <ImageButton
-        android:id="@+id/btn_left_2"
+        android:id="@+id/btnDislike"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
         android:src="@drawable/ic_close"
         android:backgroundTint="@android:color/transparent"
-        android:text="Left" />
+        android:text="dislike" />
 
     <ImageButton
-        android:id="@+id/btn_center_2"
+        android:id="@+id/btnInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_info"
         android:layout_centerInParent="true"
         android:backgroundTint="@android:color/transparent"
-        android:text="Center" />
+        android:text="info" />
 
     <ImageButton
-        android:id="@+id/btn_right_2"
+        android:id="@+id/btnLike"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_like"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:backgroundTint="@android:color/transparent"
-        android:text="Right" />
+        android:text="like" />
 
 </RelativeLayout>

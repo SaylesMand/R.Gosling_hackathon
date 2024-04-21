@@ -11,4 +11,6 @@ import ru.samsung.itacademy.mdev.fypet.domain.entites.Status;
 
 public interface UserRepository {
     void getUser(@NonNull String id, @NonNull Consumer<Status<FullUserEntity>> callback);
+
+    void getUserByName(@NonNull String name, @NonNull Consumer<Status<FullUserEntity>> callback);
 }

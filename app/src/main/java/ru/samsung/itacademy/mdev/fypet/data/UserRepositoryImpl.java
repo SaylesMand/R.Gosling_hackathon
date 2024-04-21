@@ -28,6 +28,8 @@ public class UserRepositoryImpl implements UserRepository, SignUserRepository {
         }
         return INSTANCE;
     }
+
+
     @Override
     public void getUser(@NonNull String id, @NonNull Consumer<Status<FullUserEntity>> callback) {
         userApi.getById(id).enqueue(new CallToConsumer<>(
@@ -53,6 +55,32 @@ public class UserRepositoryImpl implements UserRepository, SignUserRepository {
                 }
         ));
 
+    }
+
+    @Override
+    public void getUserByName(@NonNull String username, @NonNull Consumer<Status<FullUserEntity>> callback) {
+        userApi.getByName(username).enqueue(new CallToConsumer<>(
+                callback,
+                user -> {
+                    final String resultId = user.id;
+                    final String name = user.name;
+                    final String surname = user.surname;
+//                    final String password = user.password;
+                    if (resultId != null && name != null && surname != null) {
+                        return new FullUserEntity(
+                                resultId,
+                                name,
+                                surname,
+//                                password,
+                                user.email,
+                                user.phone,
+                                user.address
+                        );
+                    } else {
+                        return null;
+                    }
+                }
+        ));
     }
 
     @Override

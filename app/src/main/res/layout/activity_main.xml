@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/toolbar_menu_2"
+        app:menu="@menu/main_screen_toolbar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
 
@@ -57,7 +57,7 @@
 
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_main"
+        android:id="@+id/infoToolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@android:color/transparent"
@@ -65,7 +65,7 @@
         android:layout_marginTop="10dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:menu="@menu/toolbar_menu_3"
+        app:menu="@menu/info_main_toolbar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
