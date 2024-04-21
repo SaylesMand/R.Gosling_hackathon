@@ -4,17 +4,19 @@ import androidx.annotation.NonNull;
 
 import java.util.function.Consumer;
 
+import ru.samsung.itacademy.mdev.fypet.data.dto.CommentPostDto;
 import ru.samsung.itacademy.mdev.fypet.data.network.RetrofitFactory;
 import ru.samsung.itacademy.mdev.fypet.data.source.CommentApi;
 import ru.samsung.itacademy.mdev.fypet.data.utils.CallToConsumer;
 import ru.samsung.itacademy.mdev.fypet.domain.CommentRepository;
 import ru.samsung.itacademy.mdev.fypet.domain.entites.FullCommentEntity;
 import ru.samsung.itacademy.mdev.fypet.domain.entites.Status;
+import ru.samsung.itacademy.mdev.fypet.domain.sign.SignCommentRepository;
 
 
-public class CommentRepositoryImpl implements CommentRepository {
+public class CommentRepositoryImpl implements CommentRepository, SignCommentRepository {
     private static CommentRepositoryImpl INSTANCE;
-    private final CommentApi CommentApi = RetrofitFactory.getInstance().getCommentApi();
+    private final CommentApi commentApi = RetrofitFactory.getInstance().getCommentApi();
     private CommentRepositoryImpl() {}
 
     public static synchronized CommentRepositoryImpl getInstance() {
@@ -25,7 +27,7 @@ public class CommentRepositoryImpl implements CommentRepository {
     }
     @Override
     public void getComment(@NonNull String id, @NonNull Consumer<Status<FullCommentEntity>> callback) {
-        CommentApi.getById(id).enqueue(new CallToConsumer<>(
+        commentApi.getById(id).enqueue(new CallToConsumer<>(
                 callback,
                 comment -> {
                     final String resultId = comment.id;
@@ -44,5 +46,14 @@ public class CommentRepositoryImpl implements CommentRepository {
                 }
         ));
 
+    }
+
+    @Override
+    public void createComment(@NonNull String content, @NonNull String form_id, @NonNull String user_id, Consumer<Status<Void>> callback) {
+        /** CHECK FOR USER LOGIN **/
+        commentApi.postComment(new CommentPostDto(content, form_id, user_id)).enqueue(new CallToConsumer<>(
+                callback,
+                dto -> null
+        ));
     }
 }

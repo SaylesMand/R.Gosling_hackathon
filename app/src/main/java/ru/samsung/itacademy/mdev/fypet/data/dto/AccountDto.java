@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import com.google.gson.annotations.SerializedName;
 
 public class AccountDto {
+    // TODO maybe name not username
     @NonNull
     @SerializedName("username")
     public String name;

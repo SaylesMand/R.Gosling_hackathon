@@ -21,15 +21,25 @@ public class CredentialsDataSource {
     private String authData = null;
 
     @Nullable
+    private String login = null;
+
+    @Nullable
     public String getAuthData() {
         return authData;
     }
 
+    @Nullable
+    public String getLogin() {
+        return login;
+    }
+
     public void updateLogin(@NonNull String login, @NonNull String password) {
+        this.login = login;
         authData = Credentials.basic(login, password);
     }
 
     public void logout() {
+        login = null;
         authData = null;
     }
 }

@@ -10,12 +10,12 @@ import ru.samsung.itacademy.mdev.fypet.data.dto.UserDto;
 
 public interface UserApi {
 //    TODO
-    @GET("edu/v1/user/{id}")
+    @GET("user/{id}")
     Call<UserDto> getById(@Path("id") String id);
-    @GET("/edu/v1/user/username/{username}")
+    @GET("user/username/{username}")
     Call<Void> isExist(@Path("username") String login);
-    @POST("edu/v1/user/register")
+    @POST("user/register")
     Call<Void> register(@Body AccountDto dto);
-    @GET("edu/v1/user/login")
+    @GET("user/login")
     Call<Void> login();
 }
