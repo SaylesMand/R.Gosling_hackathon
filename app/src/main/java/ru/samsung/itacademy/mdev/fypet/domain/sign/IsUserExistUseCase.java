@@ -1,10 +1,11 @@
-package ru.samsung.userlistapp.domain.sign;
+package ru.samsung.itacademy.mdev.fypet.domain.sign;
 
 import androidx.annotation.NonNull;
 
 import java.util.function.Consumer;
 
-import ru.samsung.userlistapp.domain.entites.Status;
+import ru.samsung.itacademy.mdev.fypet.domain.entites.Status;
+
 
 public class IsUserExistUseCase {
     private final SignUserRepository repo;

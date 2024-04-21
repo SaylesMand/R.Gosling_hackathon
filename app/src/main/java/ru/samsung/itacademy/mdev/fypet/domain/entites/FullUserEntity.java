@@ -10,8 +10,8 @@ public class FullUserEntity {
     private final String name;
     @NonNull
     private final String surname;
-    @NonNull
-    private final String password;
+//    @NonNull
+//    private final String password;
     @Nullable
     private final String email;
     @Nullable
@@ -23,14 +23,14 @@ public class FullUserEntity {
             @NonNull String id,
             @NonNull String name,
             @NonNull String surname,
-            @NonNull String password,
+//            @NonNull String password,
             @Nullable String email,
             @Nullable String phone,
             @Nullable String address) {
         this.id = id;
         this.name = name;
         this.surname = surname;
-        this.password = password;
+//        this.password = password;
         this.email = email;
         this.phone = phone;
         this.address = address;
@@ -61,10 +61,10 @@ public class FullUserEntity {
         return surname;
     }
 
-    @NonNull
-    public String getPassword() {
-        return password;
-    }
+//    @NonNull
+//    public String getPassword() {
+//        return password;
+//    }
 
     @Nullable
     public String getAddress() {
