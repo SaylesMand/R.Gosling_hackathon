@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import ru.samsung.itacademy.mdev.fypet.data.UserRepositoryImpl;
+import ru.samsung.itacademy.mdev.fypet.data.source.CredentialsDataSource;
 import ru.samsung.itacademy.mdev.fypet.domain.sign.IsUserExistUseCase;
 import ru.samsung.itacademy.mdev.fypet.domain.sign.LoginUserUseCase;
 
@@ -31,6 +32,11 @@ public class LoginActivity extends AppCompatActivity {
         // if executed from successful registration
         login_edit.setText(getIntent().getStringExtra("login"));
         password_edit.setText(getIntent().getStringExtra("password"));
+
+        if (CredentialsDataSource.getInstance().getAuthData() != null) {
+            Intent i = new Intent(this, FormsActivity.class);
+            startActivity(i);
+        }
 
         Button accept_btn = (Button) findViewById(R.id.loginButton);
         accept_btn.setOnClickListener(v -> {
@@ -62,6 +68,11 @@ public class LoginActivity extends AppCompatActivity {
             Intent i = new Intent(this, RegistrationActivity.class);
             i.putExtra("login", login_edit.getText().toString());
             i.putExtra("password", password_edit.getText().toString());
+            startActivity(i);
+        });
+
+        ((Button) findViewById(R.id.cheatBtn)).setOnClickListener(v -> {
+            Intent i = new Intent(this, FormsActivity.class);
             startActivity(i);
         });
     }
