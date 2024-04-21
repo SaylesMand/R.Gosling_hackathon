@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,36 +23,22 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Toolbar toolbar_main = findViewById(R.id.toolbar_main);
-        setSupportActionBar(toolbar_main);
+        ImageButton btn_info = findViewById(R.id.btn_info);
+        btn_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, InfoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.toolbar_menu_3, menu);
         getMenuInflater().inflate(R.menu.toolbar_menu_2, menu);
-
-        MenuItem customMenuItem_2 = menu.findItem(R.id.action_custom2);
-        View customMenuView_2 = customMenuItem_2.getActionView();
-
-        ImageButton btnLeft_2 = customMenuView_2.findViewById(R.id.btn_left_2);
-        ImageButton btnCenter_2 = customMenuView_2.findViewById(R.id.btn_center_2);
-        ImageButton btnRight_2 = customMenuView_2.findViewById(R.id.btn_right_2);
-
-        btnLeft_2.setOnClickListener(v -> {
-
-        });
-
-        btnCenter_2.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, InfoActivity.class);
-            startActivity(intent);
-        });
-
-        btnRight_2.setOnClickListener(v -> {
-            // Handle right button click for customMenuItem_2
-        });
-
 
         MenuItem customMenuItem = menu.findItem(R.id.action_custom);
         View customMenuView = customMenuItem.getActionView();
@@ -71,9 +59,6 @@ public class MainActivity extends AppCompatActivity {
         btnRight.setOnClickListener(v -> {
             // Handle right button click
         });
-
-
-
         return true;
     }
 }

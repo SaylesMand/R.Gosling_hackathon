@@ -8,8 +8,6 @@
     tools:context=".InfoActivity">
 
 
-
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewInfo"
         android:layout_width="match_parent"
@@ -18,7 +16,8 @@
         app:cardCornerRadius="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp">
 
 
         <ImageView
@@ -56,7 +55,7 @@
             android:layout_height="wrap_content"
             android:text="@string/name_dog"
             android:textColor="@color/black"
-            android:textSize="38sp"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
         <TextView
@@ -64,13 +63,13 @@
             android:layout_height="wrap_content"
             android:text="@string/breed_dog"
             android:layout_marginTop="10dp"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Общая информация"
             android:layout_marginTop="10dp"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
             
 
@@ -95,9 +94,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Введите сообщение..."
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="14dp"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
